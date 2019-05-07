@@ -1,7 +1,6 @@
 # Define School Class
 class School
-  attr_accessor :grade
-  attr_reader :name, :roster
+  attr_accessor :name, :roster
 
   # Initialize school with name and empty roster
   def initialize(name)
