@@ -1,3 +1,5 @@
+require 'pry'
+
 class School
   # each instance has a roster constant variable - initially an empty hash
   # roster hash: { grade_levels => [students] }
@@ -23,8 +25,6 @@ class School
   end
 
   def sort
-    sort_students = {}
-    @ROSTER.each { |grade, students| sort_students[grade] = students.sort }
-    sort_students
+    @ROSTER.each { |grade, students| @ROSTER[grade] = students.sort }
   end
 end
