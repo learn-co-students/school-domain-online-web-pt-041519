@@ -7,24 +7,22 @@ class School
   # grade(grade_num): returns all students in grade_num
   # sort: return roster hash with students A > Z
 
+  attr_reader :name, :roster
+
   def initialize(name)
     @name = name
-    @ROSTER = {}
+    @roster = {}
   end
 
-  def roster
-    @ROSTER
-  end
-
-  def add_student(student_name, grade)
-    @ROSTER[grade] ? @ROSTER[grade] << student_name : @ROSTER[grade] = [student_name]
+  def add_student (student_name, grade)
+    @roster[grade] ? @roster[grade] << student_name : @roster[grade] = [student_name]
   end
 
   def grade(grade)
-    @ROSTER[grade]
+    @roster[grade]
   end
 
   def sort
-    @ROSTER.each { |grade, students| @ROSTER[grade] = students.sort }
+    @roster.each { |grade, students| @roster[grade] = students.sort }
   end
 end
